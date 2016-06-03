@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>ALUi Dynamic login</title>
+    
+    
+    
+    
+        <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+body{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	color: #fff;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.body{
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	right: -40px;
+	bottom: -40px;
+	width: auto;
+	height: auto;
+	background-image: url(Find-your-passion.jpg);
+	background-size: cover;
+	<!-- -webkit-filter: blur(5px); -->
+	z-index: 0;
+}
+
+.grad{
+
+	top: -20px;
+	left: -20px;
+	right: -40px;
+	bottom: -40px;
+	width: auto;
+	height: auto;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+	z-index: 1;
+	opacity: 0.7;
+}
+
+.header{
+    position: absolute;
+    top: calc(15% - 35px);
+    left: calc(31% - 255px);
+    z-index: 2;
+
+}
+
+.header div{
+	float: left;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 72px;
+	font-weight: 200;
+}
+
+.header div span{
+	color: #5379fa !important;
+}
+
+.login{
+    position: absolute;
+    top: calc(38% - 75px);
+    left: calc(22% - 50px);
+    height: 150px;
+    width: 368px;
+    padding: 10px;
+    z-index: 2;
+}
+	}
+	
+	form {
+    background-color: rgba(0, 0, 0, 0.22);
+}
+
+
+
+input.signup, input.signin {
+      color: white;
+	  background-color:rgba(51, 113, 234, 0.8)!important;
+}
+
+/* .login input[type=text]{
+	width: 250px;
+	height: 30px;
+	background-color: blue;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+ 
+
+.login input[type=password]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login input, .login input[type=button],.login input[type=submit]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+} */
+.quote {
+       width: 60%;
+    text-shadow: 18px 8px 33px #140707;
+    position: relative;
+    top: 571px;
+    text-align: center;
+    font-size: 27px;
+    color: white;
+
+}
+ input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition-delay: 9999s;
+    -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+} 
+/*.login input[type=button]:hover{
+	opacity: 0.8;
+}
+
+.login input[type=button]:active{
+	opacity: 0.6;
+}
+.login input[type=submit]:hover{
+	opacity: 0.8;
+}
+
+.login input[type=submit]:active{
+	opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+} 
+
+ .login input[type=button]:focus{
+	outline: none;
+}
+.login input[type=submit]:focus{
+	outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+} */
+label.input__label.input__label--hideo {
+    text-align: center;
+}
+span.input.input--hideo {
+    height: auto;
+}
+    </style>
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="sign1 in session/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="sign1 in session/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="sign1 in session/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="sign1 in session/css/set1.css" />
+    
+        <script src="js/prefixfree.min.js"></script>
+
+    
+  </head>
+
+  <body>
+
+    <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div><b>Find<span>MyPassion</span></b></div>
+		</div>
+		<br>
+				<div class="login">
+
+		 <form action = "html form action.php" method = "post">
+			<!-- 	<input type="text"  name="user_id"><br>
+				<input type="password"  name="password"><br> -->
+<span class="input input--hideo">
+					<input class="input__field input__field--hideo" placeholder="Email or Username" name="user_id" type="text" id="input-41" />
+					<label class="input__label input__label--hideo" for="input-41">
+						<i class="fa fa-fw fa-user icon icon--hideo"></i>
+						<span class="input__label-content input__label-content--hideo">Username</span>
+					</label>
+				</span>
+				<span class="input input--hideo">
+					<input class="input__field input__field--hideo"  placeholder="password" type="password" name="password" id="input-43" />
+					<label class="input__label input__label--hideo" for="input-43">
+						<i class="fa fa-fw fa-lock icon icon--hideo"></i>
+						<span class="input__label-content input__label-content--hideo">Password</span>
+						
+						</label></span>
+				<input type="submit" class = "signin" value="Login">
+				<a href="sign1 in session/signup.html"><input type = "button" class= "signup" value = "Sign up"/></a>                
+		</form>
+		</div>
+		<div class = "quote">"People with passion can change the world for the better"<br>Steve Jobs</div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+				<script src="sign1 in session/js/classie.js"></script>
+
+    		<script>
+			(function() {
+				// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+				if (!String.prototype.trim) {
+					(function() {
+						// Make sure we trim BOM and NBSP
+						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+						String.prototype.trim = function() {
+							return this.replace(rtrim, '');
+						};
+					})();
+				}
+
+				[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+					// in case the input is already filled..
+					if( inputEl.value.trim() !== '' ) {
+						classie.add( inputEl.parentNode, 'input--filled' );
+					}
+
+					// events:
+					inputEl.addEventListener( 'focus', onInputFocus );
+					inputEl.addEventListener( 'blur', onInputBlur );
+				} );
+
+				function onInputFocus( ev ) {
+					classie.add( ev.target.parentNode, 'input--filled' );
+				}
+
+				function onInputBlur( ev ) {
+					if( ev.target.value.trim() === '' ) {
+						classie.remove( ev.target.parentNode, 'input--filled' );
+					}
+				}
+			})();
+		</script>
+    
+    
+    
+  </body>
+</html>
