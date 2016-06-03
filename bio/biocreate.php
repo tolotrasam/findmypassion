@@ -1,4 +1,6 @@
 <?php
+ require('../session.php');
+require '../connect.php';
 echo 'submitted!!!';
 echo $gender = $_POST['gender'];
 echo $nationality = $_POST['nationality'];
@@ -9,8 +11,7 @@ echo $freetime = $_POST['freetime'];
 echo $address = $_POST['address'];
 $now = date("Y-m-d H:i:s",time());
 
-  require('../session.php');
-require '../connect.php';
+ 
 echo $table = 'loginlist1';
 //new connection with the previous variables
   // sql to create table
