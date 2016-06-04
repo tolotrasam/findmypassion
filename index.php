@@ -1,9 +1,7 @@
 <?php
  require('session.php');
  require('bio/survey.php')
- require 'Cloudinary.php';
-require 'Uploader.php';
-require 'Api.php';
+
 ?>	
 	<!-- Nav horizontalnav -->
     <title>Welcome </title>
