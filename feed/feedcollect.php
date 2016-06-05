@@ -29,7 +29,7 @@ $posttbl TEXT(2000) NOT NULL,
 $datetbl TIMESTAMP,
 $feed_code VARCHAR (10),
 $filename VARCHAR(500)  NULL,
-$filepath VARCHAR(500)  NULL,
+filepath VARCHAR(500)  NULL,
 $filetype VARCHAR(500)  NULL,
 type VARCHAR(50)  ,
 audience VARCHAR(500)  ,
@@ -53,12 +53,13 @@ $value2 = $_POST['mainfeed'];
 $value1 = $login_session;
 $value3 = $_post['uploadimage'];
 $target_Folder = "feedpicture/";
-$file_name = $_FILES['uploadimage']['name'];
-$file_type = $_FILES['uploadimage']['type'];
+$file_name = $_FILES['file']['name'];
+$file_type = $_FILES['file']['type'];
 $full_name;
 $value4 = $_POST['title-mainfeed'];
 $value8 = $_POST['audience'];
-$value7 = $_POST['type'];
+$value7 = $_POST['feed-type'];
+$filepath = $_POST['filepath'];
 $value5 = $_POST['course'];
 $value6 = $_POST['audience2'];
 $linkeditem = $_POST['linkeditem'];
@@ -78,13 +79,13 @@ notification ($author, $action, $nature, $recipient, $item, $item_code, $place);
 
 //inserting data
 $sql = "INSERT INTO $table ($username_tbl,$posttbl,$datetbl,$filename,filepath, $feed_code, filetype, title, course, audience2, type, audience, author, linkeditem) VALUES 
-('$value1','$value2','$now','$file_name','$target_Folder$file_name', '$rand', '$file_type', '$value4','$value5','$value6','$value7','$value8', '$full_name', '$linkeditem'  )";
+('$value1','$value2','$now','$file_name','$filepath', '$rand', '$file_type', '$value4','$value5','$value6','$value7','$value8', '$full_name', '$linkeditem'  )";
 if (mysqli_query($conn, $sql)) {
 	//if the picture is uploaded sucessfully,it will be moved inside the container folder
-	$target_Path = $target_Folder.basename( $_FILES['uploadimage']['name'] );
-$savepath = $target_Path.basename( $_FILES['uploadimage']['name'] );
-        move_uploaded_file( $_FILES['uploadimage']['tmp_name'], "../$target_Path" );
-      header ('location: ../welcome.php'); 
+	// $target_Path = $target_Folder.basename( $_FILES['uploadimage']['name'] );
+// $savepath = $target_Path.basename( $_FILES['uploadimage']['name'] );
+        // move_uploaded_file( $_FILES['uploadimage']['tmp_name'], "../$target_Path" );
+      //header ('location: ../welcome.php'); 
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
