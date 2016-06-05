@@ -1,7 +1,6 @@
 <?php
  require('session.php');
  require('bio/survey.php')
-
 ?>	
 	<!-- Nav horizontalnav -->
     <title>Welcome </title>
@@ -102,7 +101,6 @@
                             <!-- jQuery if needed -->
                             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
                             <script type="text/javascript">
-             
 
                                 function DropDown5(el) {
                                     this.dd = el;
@@ -182,8 +180,13 @@
                                     <div class="postcontainer">
 									<span id = "hide-postbox" style = "cursor:hand" class= "left clicked fa fa-caret-square-o-up"></span>
                                         <div class="row">
-											
-                                   <form action="feed/feedcollect.php" method="post" role="form" enctype="multipart/form-data" class="facebook-share-box" target = "targetframe">
+																								 <?php
+    $cloudName = "tolotra";
+    $apiKey = "488314877966553";
+    $time = time();
+    $apiSecret = "bTmyj3x93aRGOaHoQfTfYzMV0tY";
+?> 
+                                   <form action ="" action2 = "feed/feedcollect.php" action1="https://api.cloudinary.com/v1_1/<?php echo $cloudName;?>/image/upload" method="post" role="form" id = "mainform" enctype="multipart/form-data" class="facebook-share-box" target = "targetframe">
 							<!-- type starts--><div><?php 
 							require 'php-static-component/droptype.php'
 							?>
@@ -198,7 +201,7 @@
                                                         <li class="post-type">
                                                             <a class="photos" href="#"><i class="icon icon-camera"></i>Add photos</a>
 
-                                                            <input type="file" name="uploadimage" id="status11" rows="5" style="width: 100%" />
+                                                            <input class = "cloudinaryinput" type="file" name="file" id="file" rows="5" style="width: 100%" />
                                                         </li>
                                                     </ul>
 											</div>
@@ -258,15 +261,91 @@
 													 <div class="containerdropboxes"><?php 
 													 require 'php-static-component/dropdownmenu.php'
 													 ?>
-                                                             <input type="submit" name="submit" id = "mainpost" value="Post" class="btn btn-primary"></div>
+       
+ <?php $fileName = "miss.jpg"; ?>   
+      <span id = "cloudinaryfile">
+    <input class = "cloudinaryinput" id = "signature" type="hidden" name="signature" value="<?php echo sha1('public_id='.$fileName.'&timestamp='.$time.$apiSecret);?>" />
+    <input  class = "cloudinaryinput" type="hidden" name="api_key" id="api_key" value="<?php echo $apiKey; ?>"/>
+    <input  class = "cloudinaryinput" type="hidden" name="timestamp" id="timestamp" value="<?php echo $time; ?>" />
+    <input class = "cloudinaryinput" type="hidden" name="public_id" id="public_id" value="<?php echo $fileName; ?>" />
+    <input class = "cloudinaryinput" type="hidden" name="filepath" id="filepath" value="<?php ?>" />
+</span>
+ <script type="text/javascript" src="js/sha1.js"></script>
+ <script>
+
+	
+	$("document").ready(function(){
+    	z = "<?php echo $url = '<a href = \"http://'.$_SERVER["HTTP_HOST"].'/login.html\">Loginagain</a>'?>";
+		$('.activelist').html(z);
+    $(".cloudinaryinput#file").change(function() {
+              var timestamp = $('.cloudinaryinput#timestamp').val();
+              var secretapi = "<?php echo $apiSecret?>";
+              var cloudname = "<?php echo $cloudName?>";
+			  var loc = $(this).val()
+			  var filename1  = loc.split('/').pop().split('.').shift();
+        //alert(filename);
+		var filename = (filename1).replace(/C:\\fakepath\\/i, '');
+			  var signature = SHA1('public_id='+filename+'&timestamp='+timestamp+''+secretapi+'')
+
+// alert(signature);
+//alert(filename);
+			$(".cloudinaryinput#signature").attr('value', signature);
+			$(".cloudinaryinput#public_id").val(filename);
+		var filepath = 	'http://res.cloudinary.com/'+cloudname+'/image/upload/'+filename+'';
+			$(".cloudinaryinput#filepath").val(filepath);
+			//$('.activelist').html(filepath);
+
+            });    
+});
+					</script>
+					<input type="submit" name="submit" id = "mainpost" value="Post" class="btn btn-primary">
+															 </div>
 											
                                             </div>
                                         </div>
                                     </div>
                                     <script src="js/arrow.js"></script>
                                     </form>
-									
+									 <script type='text/javascript'>
+		//double form action 
+		//ACTION 1 changes the attribute action to action1
+		$('#mainform').on('submit',function(e){
+				real = $(this).attr('action1');
+$(this).attr('action', real);			
+    // e.preventDefault();
+    // $.ajax({
+        // type     : "POST",
+        // cache    : false,
+        // url      : $(this).attr('action1'),
+        // data     : $(this).serialize(),
+        // success  : function(data) {
+            // $(".printArea").empty().append(data).css('visibility','visible');
+        // }
+    // });
+	time = +new Date;
+			//alert(time);
+
+});
+//ACTION 2 use ajax to send the data to the form action2
+
+	$('#mainform').on('submit',function(e){
+   //preventDefault is a function that enable the default action in the elements
+   //e.preventDefault(); 
+   
+    $.ajax({
+        type     : "POST",
+        cache    : false,
+        url      : $(this).attr('action2'),
+        data     : $(this).serialize(),
+        success  : function(data) {
+            //$(".printArea").append(data).css('visibility','visible');
+        }
+    });
+
+});
+</script>
                                 </div>
+								
 																			<!-- end of postbox and postcontainer java boxes -->
 							 <div class="feedprint">
                                     <?php 
