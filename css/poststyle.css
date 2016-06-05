@@ -17,7 +17,7 @@ CSS
 }
 
 .facebook-share-box .share .arrow {
-    background: url(arrow.png) no-repeat #dddddd;
+    /*background: url(arrow.png) no-repeat #dddddd;*/
     position: absolute;
     width: 14px;
     height: 10px;
