@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
 		   echo'<div class = "chatlisttext">';
 		   echo '<div class = "linkfloat" address = "'.$activeuser.'" link = "privatetalk/livechat/livechat.php?tablemessage='.$conversation_name.'&contact='.$activeuser.'"> '.$full_name_active.'</div>';
 		   echo ' <div class = "emotion">&nbsp is '.$emotion.' </div> ';
-		   echo '<span class = "greenbubble"><img src = "../activeusers/img/shortcode-green-dot.png"></img></span>';
+		   echo '<span class = "greenbubble"><img src = "activeusers/img/shortcode-green-dot.png"></img></span>';
 		   echo'</div></div>';
 		echo'</div>'; }
 		//inactive users
