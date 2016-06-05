@@ -102,6 +102,8 @@
                             <!-- jQuery if needed -->
                             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
                             <script type="text/javascript">
+                            	z = "<?php echo $url = (isset($_SERVER['HTTPS']) ? "https" : "http")?>";
+		alert (z);
 
                                 function DropDown5(el) {
                                     this.dd = el;
