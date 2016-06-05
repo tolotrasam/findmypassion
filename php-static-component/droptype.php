@@ -5,7 +5,7 @@
                                                                                 <section class="main right">
                                                                                     <div class="wrapper-demo">
                                                                                         <div id="dd3" class="wrapper-dropdown-3" tabindex="1">
-                                                                                            <textarea name = "type" style="display: none; color: black"></textarea>
+                                                                                            <textarea name = "feed-type" style="display: none; color: black"></textarea>
 																							<span>Community type</span>
                                                                                             <ul class="dropdown">
                                                                                                 <li><a href="#"><i class="icon-envelope icon-large"></i>Music</a></li>
