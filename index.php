@@ -264,11 +264,11 @@
        
  <?php $fileName = "miss.jpg"; ?>   
       <span id = "cloudinaryfile">
-    <input class = "cloudinaryinput" id = "signature" type="hidden" name="signature" value="<?php echo sha1('public_id='.$fileName.'&timestamp='.$time.$apiSecret);?>" />
-    <input  class = "cloudinaryinput" type="hidden" name="api_key" id="api_key" value="<?php echo $apiKey; ?>"/>
-    <input  class = "cloudinaryinput" type="hidden" name="timestamp" id="timestamp" value="<?php echo $time; ?>" />
-    <input class = "cloudinaryinput" type="hidden" name="public_id" id="public_id" value="<?php echo $fileName; ?>" />
-    <input class = "cloudinaryinput" type="hidden" name="filepath" id="filepath" value="<?php ?>" />
+    <input class = "cloudinaryinput" id = "signature" type="" name="signature" value="<?php echo sha1('public_id='.$fileName.'&timestamp='.$time.$apiSecret);?>" />
+    <input  class = "cloudinaryinput" type="" name="api_key" id="api_key" value="<?php echo $apiKey; ?>"/>
+    <input  class = "cloudinaryinput" type="" name="timestamp" id="timestamp" value="<?php echo $time; ?>" />
+    <input class = "cloudinaryinput" type="" name="public_id" id="public_id" value="<?php echo $fileName; ?>" />
+    <input class = "cloudinaryinput" type="" name="filepath" id="filepath" value="<?php ?>" />
 </span>
  <script type="text/javascript" src="js/sha1.js"></script>
  <script>
